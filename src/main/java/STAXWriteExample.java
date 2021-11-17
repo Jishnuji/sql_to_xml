@@ -36,5 +36,8 @@ public class STAXWriteExample {
         }
 
         writer.writeEndDocument();
+        if (writer != null) {
+            writer.close();
+        }
     }
 }
