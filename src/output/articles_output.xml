@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<articles>
+   <article>
+      <id_art>1</id_art>
+      <name>Батон нарезной в/с 0,4 кг</name>
+      <code>1010123456</code>
+      <username>WHS</username>
+      <guid>08278687-0e29-45ff-9122-fd53a2652a8f</guid>
+   </article>
+   <article>
+      <id_art>2</id_art>
+      <name>Батон нарезной в/с 0,4 кг</name>
+      <code>1010123457</code>
+      <username>WHS</username>
+      <guid>3ef7ed74-2d2f-4546-9588-4f83ab2e0bfd</guid>
+   </article>
+   <article>
+      <id_art>3</id_art>
+      <name>Батон нарезной в/с 0,4 кг</name>
+      <code>1010123458</code>
+      <username>WHS</username>
+      <guid>81c24eea-df52-4e1f-bcb2-58fb468530e2</guid>
+   </article>
+   <article>
+      <id_art>4</id_art>
+      <name>Батон нарезной в/с 0,4 кг</name>
+      <code>1010123459</code>
+      <username>WHS</username>
+      <guid>36acf4d9-5cc5-4ae1-bf04-559bb32cb4fc</guid>
+   </article>
+   <article>
+      <id_art>5</id_art>
+      <name>Батон нарезной в/с 0,4 кг</name>
+      <code>10101234510</code>
+      <username>WHS</username>
+      <guid>e428ace9-ccd2-4e95-91b8-be7a115af0c6</guid>
+   </article>
+</articles>
