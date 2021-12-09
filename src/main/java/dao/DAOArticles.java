@@ -1,9 +1,7 @@
 package dao;
 
-import model.Article;
-
-import java.util.List;
+import java.sql.ResultSet;
 
 public interface DAOArticles {
-    List<Article> getArticlesFromDB ();
+    ResultSet getArticleResultSetFromDB ();
 }

@@ -4,6 +4,7 @@ import configuration.XMLWriterConfig;
 import dao.DAOArticles;
 import dao.DAOArticlesJDBCImpl;
 import model.Article;
+import service.ServiceArticles;
 
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -19,11 +20,11 @@ public class STAXWriterArticle {
     public void createXMLWriter() {
         XMLOutputFactory factory = XMLOutputFactory.newFactory();
         xmlWriterConfig = new XMLWriterConfig();
+        ServiceArticles serviceArticles = new ServiceArticles();
 
         try(FileOutputStream fileOutputStream = new FileOutputStream(xmlWriterConfig.getSRC())) {
             writer = factory.createXMLStreamWriter(fileOutputStream);
-            DAOArticles daoArticles = new DAOArticlesJDBCImpl();
-            writeToXML(daoArticles.getArticlesFromDB());
+            writeToXML(serviceArticles.getArticlesFromResultSet());
 
         } catch (IOException | XMLStreamException e) {
             e.printStackTrace();
