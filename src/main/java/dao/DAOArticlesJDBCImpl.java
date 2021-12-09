@@ -1,16 +1,22 @@
+package dao;
+
+import configuration.ConnectionPoolingConfig;
+import model.Article;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DAOArticles {
-    public List<Article> getArticlesFromBD () {
+public class DAOArticlesJDBCImpl implements DAOArticles {
+    private static final String SELECT_ARTICLES = "select id_art, name, code, username, guid from whs.article limit 10000";
+
+    public List<Article> getArticlesFromDB () {
         List<Article> articles = new ArrayList<>();
-        String sql = "select id_art, name, code, username, guid from whs.article limit 10000";
-        try(Connection connection = ConnectionPooling.getConnection(); Statement statement = connection.createStatement()){
+        try(Connection connection = ConnectionPoolingConfig.getDataSource().getConnection();
+            Statement statement = connection.createStatement()){
             connection.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
             connection.setAutoCommit(false);
-            ResultSet resultSet = statement.executeQuery(sql);
+            ResultSet resultSet = statement.executeQuery(SELECT_ARTICLES);
 
             while (resultSet.next()) {
                long id_art = resultSet.getLong("id_art");
@@ -22,8 +28,8 @@ public class DAOArticles {
             }
 
             connection.commit();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
         }
         return articles;
     }

@@ -1,3 +1,5 @@
+package model;
+
 public class Article {
     private long id;
     private String name;
